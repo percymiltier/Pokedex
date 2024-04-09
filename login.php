@@ -13,6 +13,9 @@
         <div style="display:flex; flex-flow:row;">
             <div style="display:flex; flex-flow:column;">
                 <!-- User login -->
+                <p>
+                    Username: 
+                </p>
             </div>
             <div style="height:100%; border:#000 2px solid;"></div>
             <div style="display:flex; flex-flow:column;">
