@@ -1,0 +1,34 @@
+p {
+    color:black;
+}
+
+h {
+    color:black;
+}
+
+.yesbutton {
+    background-color:green;
+    color:white;
+}
+
+.yesbutton:hover {
+    background-color: greenyellow;
+}
+
+.nobutton {
+    background-color: red;
+    color: white;
+}
+
+.nobutton:hover {
+    background-color: lightcoral;
+}
+
+.maybebutton {
+    background-color: orange;
+    color:white;
+}
+
+.maybebutton:hover {
+    background-color: gold;
+}
