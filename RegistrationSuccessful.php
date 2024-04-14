@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1000px, initial-scale=1.0">
     <title>Registration Successful!</title>
-    <link href="/stylesheet.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/Pokedex/stylesheet.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body>
