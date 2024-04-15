@@ -1,38 +1,39 @@
-<?php
-require_once('login.php');
-$query = "select * from users";
-$result = mysqli_query($con, $query);
-
-?>
-
 <!DOCTYPE html>
-<html land="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Pokedex/stylesheet.css">
-    <title> View Database (Guest)
-</head>
-<body class = "bg-dark">
-    <div class="Container">
-        <div class="row">
-            <div class="col">
-                <div class= "card mt-5">
-                    <h2 class="display-6 text-center">Fetch Data From Database in PHP</h2>
-                </div>
-                <div class="card-body">
-                    <table class= "table table-bordered text-center">
-                        <tr class="bg-dark text-white">
-                            <td> Pokemon </td>
-                            <td> Type </td>
-                            <td> Status </td>
-                            <td> Trainer </td>
-                            <td> Region </td>
-                            <td> Held Item </td>
-</div>
-</div>
-</div>
-</div>
+<html>
+    <head>
+        <link rel="stylesheet" href="minimal-table.css"> 
+    </head>
+    <div class="display:flex; flex-flow:column;">
+<body>
+    
+    <h2>Hello, ADMIN</h2>
+    <input type='button' style='width:52%; height:100%;' value='Add New Pokemon' onclick='deleteRow(\"{$rec['memberID']}\")'/>
+
+   <table>
+    <tr>
+        <td>Pokemon</td>
+        <td>Type</td>
+        <td>Status</td>
+        <td>Trainer</td>
+        <td>Region</td>
+        <td>Held Item</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <input type='button' style='width:100%; height:100%;' value='Update' onclick='deleteRow(\"{$rec['memberID']}\")'/>
+            <input type='button' style='width:100%; height:100%;' value='Delete' onclick='deleteRow(\"{$rec['memberID']}\")'/>
+        </td>
+        
+      </tr>
+      
+   </table>
 </body>
 </html>
