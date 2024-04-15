@@ -1,8 +1,3 @@
-<?php
-    $username = "";
-    $password = "";
-?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1000px, initial-scale=1.0">
@@ -16,7 +11,7 @@
     <div class="main">
         <div style="display:flex; flex-flow:column;">
             <!-- button to use as a guest -->
-            <button class="yesbutton" ahref="/guest.html" style="width:50%;">View as Guest</button>
+            <a href="/Pokedex/viewdatabaseG.php" style="text-align:center;">View as Guest</a>
 
             <h1 style="color:#3E51A5; text-align:center;">OR</h1>
     

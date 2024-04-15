@@ -10,7 +10,7 @@
     <div class="main">
         <p>
             Registration successful!<br><br>
-            <button class="yesbutton" ahref="/login.php" style="width: 50%;">Login</button>
+            <a href="/Pokedex/login.php">Back to login</a>
         </p>
     </div>
 </body>
