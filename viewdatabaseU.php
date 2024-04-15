@@ -1,11 +1,3 @@
-
-<?php
-require_once('login.php');
-$query = "select * from users";
-$result = mysqli_query($con, $query);
-
-?>
-
 <!DOCTYPE html>
 <html land="en">
 <head>
