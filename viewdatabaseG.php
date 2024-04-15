@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="minimal-table.css"> 
+        <link rel="stylesheet" href="stylesheet.css"> 
     </head>
     <div class="display:flex; flex-flow:column;">
 <body>
