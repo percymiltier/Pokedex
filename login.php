@@ -1,3 +1,8 @@
+<?php
+    $username = "";
+    $password = "";
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1000px, initial-scale=1.0">
@@ -18,16 +23,18 @@
             <div style="display:flex; flex-flow:row;">
                 <div style="display:flex; flex-flow:column; justify-content: center;">
                     <!-- User login -->
-                    <p>Login:</p>
-                    <p >
-                        Username: 
-                        <input type="text" id="username">
-                    </p>
-                    <p>
-                        Password:
-                        <input type="password" id="password">
-                    </p>
-                    <button class="yesbutton" ahref="" style="width: 40%;">Login</button>
+                    <form action="" method="POST">
+                        <p>Login:</p>
+                        <p >
+                            Username: 
+                            <input type="text" id="username">
+                        </p>
+                        <p>
+                            Password:
+                            <input type="password" id="password">
+                        </p>
+                        <button type="submit" class="yesbutton" ahref="" style="width: 40%;">Login</button>
+                    </form>
                 </div>
                 <div style="height: 200px; border:1px solid #3E51A5; margin:15px"></div>
                 <div style="display:flex; flex-flow:column; justify-content: center;">
