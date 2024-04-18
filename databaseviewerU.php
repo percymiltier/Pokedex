@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="stylesheetviewer.php"> 
+    <head>        
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=1000px, initial-scale=1.0">
+     <title>Login</title>
+     <link href="/Pokedex/stylesheet.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <div class="display:flex; flex-flow:column;">
 <body>
-    
+<div class="mainTable">    
     <h2>Hello, ADMIN</h2>
     <input type='button' style='width:52%; height:100%;' value='Add New Pokemon' onclick='deleteRow(\"{$rec['memberID']}\")'/>
 
@@ -35,5 +38,6 @@
       </tr>
       
    </table>
+</div>
 </body>
 </html>

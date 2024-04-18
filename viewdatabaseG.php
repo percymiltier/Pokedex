@@ -5,6 +5,7 @@
     </head>
     <div class="display:flex; flex-flow:column;">
 <body>
+<div class="mainTable" style="width:auto;">
     
     <h2 style="color:white">Hello, GUEST</h2>
    <table>
@@ -27,5 +28,7 @@
       </tr>
       
    </table>
+    <a href="/Pokedex/login.php">Back to login</a>
+</div>
 </body>
 </html>

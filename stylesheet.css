@@ -12,14 +12,36 @@ body {
     margin-right: auto;
 }
 
+.mainTable {
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    width: min-content;
+    background: black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alert {
+    display: flex;
+    width:40%;
+    background: #3E51A5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
 p {
-    color:white;
+    color: white;
     font-size: 15px;
     text-align: center;
 }
 
 h1 {
-    color:#3E51A5;
+    color: #3E51A5:
     font-size: 20px;
 }
 
