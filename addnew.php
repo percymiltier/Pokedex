@@ -21,7 +21,7 @@
         ?>
         <form action="/Pokedex/newpokemon.php" method="GET">
         <p style="text-align: right;">
-            Pokemon: <input type="text" id="pokemonName"><br>
+            Pokemon: <input type="text" name="pokemonName"><br>
             <label for="status">Choose a status:</label>
             <select name="status" id="status">
               <option value="Normal">Normal</option>
@@ -84,9 +84,9 @@
               <option value="Fairy">Fairy</option>
             </select> <br>
             
-            Trainer Name: <input type="text" id="trainer_name"><br>
+            Trainer Name: <input type="text" name="pokemonTrainer"><br>
             
-            Held Item (type "None" if there is none): <input type="text" id="heldItem"><br>
+            Held Item (type "None" if there is none): <input type="text" name="heldItem"><br>
             <input type="submit" value="Submit">
         </p>
         </form>

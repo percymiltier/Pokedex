@@ -15,7 +15,7 @@
     $name = $_GET['usernameR'];
     $pass = $_GET['passwordR'];
 
-    if ($name="" || $pass="") {
+    if ($name=="" || $pass=="") {
         $_SESSION['error'] = "<p>Fields cannot be empty.</p>";
         header("Location:/Pokedex/login.php");
         exit();
