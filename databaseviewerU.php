@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>        
@@ -9,7 +12,6 @@
     <div class="display:flex; flex-flow:column;">
 <body>
     <h2 style="color: white">Hello, ADMIN</h2>
->>>>>>> 6169a17f700cdd86ae07faf5b64b0475361a6bd5
     <input type='button' style='width:52%; height:100%;' value='Add New Pokemon' onclick='deleteRow(\"{$rec['memberID']}\")'/>
 
    <table>
