@@ -1,1 +1,2 @@
-This is our final project for CPSC350
+View project at: https://cpsc.umw.edu/Pokedex
+Sample Login: admin2, 1234
