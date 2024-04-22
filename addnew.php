@@ -9,6 +9,7 @@
     <!-- main -->
     <div class="main">
         <h1>Add a new record:</h1>
+        <form action="/Pokedex/newpokemon.php" method="GET">
         <p style="text-align: right;">
             Pokemon: <input type="text" id="pokemonName"><br>
             Type (type NULL if no secondary type): <input type="text" id="type1"> <input type="text" id="type2"><br>
@@ -16,9 +17,8 @@
             Trainer Name: <input type="text" id="pokemonTrainer"><br>
             Region: <input type="text" id="regionName"><br>
             Held Item (type NULL if there is none): <input type="text" id="heldItem"><br>
+            <input type="submit" value="Submit">
         </p>
-        <p>
-            <button class="yesbutton" ahref="" style="width: 50%;">Submit</button>
-        </p>
+        </form>
     </div>
 </body>
