@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <?php
     session_start();
@@ -11,8 +15,12 @@
     </head>
     <div class="display:flex; flex-flow:column;">
 <body>
+<<<<<<< HEAD
     <h2 style="color: white">Hello, <?php echo $_SESSION['username'];?></h2>
 >>>>>>> 6169a17f700cdd86ae07faf5b64b0475361a6bd5
+=======
+    <h2 style="color: white">Hello, ADMIN</h2>
+>>>>>>> a86c4da6ac88f442a52cbba3f7232442e07a8e5f
     <input type='button' style='width:52%; height:100%;' value='Add New Pokemon' onclick='deleteRow(\"{$rec['memberID']}\")'/>
 
    <table>
