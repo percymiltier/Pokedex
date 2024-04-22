@@ -16,22 +16,22 @@
             Status (Normal/Legendary/Mythical):  <label for="status">Choose a status:</label>
 
             <select name="status" id="status">
-              <option value="normal">Normal</option>
-              <option value="legendary">Legendary</option>
-              <option value="mythical">Mythical</option>
+              <option value="Normal">Normal</option>
+              <option value="Legendary">Legendary</option>
+              <option value="Mythical">Mythical</option>
             </select> <br>
             Trainer Name: <input type="text" id="pokemonTrainer"><br>
             Region: <label for="region">Choose a region:</label>
             <select name="region" id="region">
-              <option value="kanto">Kanto</option>
-              <option value="johto">Johto</option>
-              <option value="hoenn">Hoenn</option>
-              <option value="sinnon">Sinnoh</option>
-              <option value="unova">Unova</option>
-              <option value="kalos">Kalos</option>
-              <option value="alola">Alola</option>
-              <option value="galar">Galar</option>
-              <option value="paldea">Paldea</option>
+              <option value="Kanto">Kanto</option>
+              <option value="Johto">Johto</option>
+              <option value="Hoenn">Hoenn</option>
+              <option value="Sinnon">Sinnoh</option>
+              <option value="Unova">Unova</option>
+              <option value="Kalos">Kalos</option>
+              <option value="Alola">Alola</option>
+              <option value="Galar">Galar</option>
+              <option value="Paldea">Paldea</option>
             </select><br>
             Held Item (type NULL if there is none): <input type="text" id="heldItem"><br>
             <input type="submit" value="Submit">
