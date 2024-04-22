@@ -37,7 +37,7 @@
                             Username: 
                             <input type="text" name="usernameL"><br>
                             Password:
-                            <input type="text" name="passwordL"><br><br>
+                            <input type="password" name="passwordL"><br><br>
                         <input type="submit" value="Login">
                         </p>
                     </form>
