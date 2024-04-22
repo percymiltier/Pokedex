@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php
     $servername = "localhost";
                 $username = "jmiltier";
@@ -18,10 +20,11 @@
                 $row = mysqli_num_rows($result);
 
                 if ($row!=1) {
-                    $_SESSION['error'] = 'Incorrect username or password.';
+                    $_SESSION["error"] = '<p>Incorrect username or password.</p>';
                     header("Location:/Pokedex/login.php");
                 } else {
-                    $_SESSION['username'] = $name;
+                    $_SESSION["username"] = "$name";
+                    $_SESSION["loggedin"] = true;
                     header("Location:/Pokedex/databaseviewerU.php");
                 }
 

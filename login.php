@@ -23,10 +23,10 @@
                 <div style="display:flex; flex-flow:column; justify-content: center;">
                     <!-- User login -->
                         <?php
-                            if (isset($_SESSION['error'])) {
+                            if (isset($_SESSION["error"])) {
                             echo "<div class=\"alert\">";
-                            echo $_SESSION['error'];
-                            unset($_SESSION['error']);
+                            echo $_SESSION["error"];
+                            unset($_SESSION["error"]);
                             echo "</div>";
                             }
                         ?>

@@ -2,7 +2,6 @@
     session_start();
 ?>
 
-<!DOCTYPE html>
 <html>
     <head>        
      <meta charset="UTF-8">
@@ -12,10 +11,17 @@
     </head>
     <div class="display:flex; flex-flow:column;">
 <body>
-    <h2 style="color: white">Hello, ADMIN</h2>
-    <input type='button' style='width:52%; height:100%;' value='Add New Pokemon' onclick='deleteRow(\"{$rec['memberID']}\")'/>
-
-   <table>
+<div class="mainTable">
+    <h2 style="color: white">Hello, <?php 
+        if (isset($_SESSION["username"])) {
+        echo $_SESSION["username"];
+        }
+    ?></h2>
+    <p>
+    
+    <a href="/Pokedex/addnew.php">Add new Pokemon</a>
+    </p>
+   <table style="margin:10px auto 10px auto auto;">
     <tr>
         <td>Pokemon</td>
         <td>Type</td>
@@ -41,6 +47,7 @@
       </tr>
       
    </table>
+</div>
 </div>
 </body>
 </html>

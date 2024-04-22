@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1000px, initial-scale=1.0">
@@ -8,21 +10,26 @@
 <body>
     <!-- main -->
     <div class="main">
-        <h1>Add a new record:</h1>
+        <h1 style="text-align:center; color:#3E51A5;">Add a new record:</h1>
+        <?php 
+            if (isset($_SESSION['error'])) {
+                echo "<div class=\"alert\">";
+                echo $_SESSION['error'];
+                echo"</div>";
+                unset($_SESSION['error']);
+            }
+        ?>
         <form action="/Pokedex/newpokemon.php" method="GET">
         <p style="text-align: right;">
             Pokemon: <input type="text" id="pokemonName"><br>
-<<<<<<< HEAD
-            Type (type NULL if no secondary type): <input type="text" id="type1"> <input type="text" id="type2"><br>
-            Status (Normal/Legendary/Mythical):  <label for="status">Choose a status:</label>
-
+            <label for="status">Choose a status:</label>
             <select name="status" id="status">
               <option value="Normal">Normal</option>
               <option value="Legendary">Legendary</option>
               <option value="Mythical">Mythical</option>
-            </select> <br>
-            Trainer Name: <input type="text" id="pokemonTrainer"><br>
-            Region: <label for="region">Choose a region:</label>
+            </select><br>
+
+            <label for="region">Choose a region:</label>
             <select name="region" id="region">
               <option value="Kanto">Kanto</option>
               <option value="Johto">Johto</option>
@@ -33,68 +40,53 @@
               <option value="Alola">Alola</option>
               <option value="Galar">Galar</option>
               <option value="Paldea">Paldea</option>
-=======
-            Type 1: <select name="type1" id="type1">
-              <option value="grass">Grass</option>
-              <option value="fire">Fire</option>
-              <option value="water">Water</option>
-              <option value="electric">Electric</option>
-              <option value="ice">Ice</option>
-              <option value="posion">Posion</option>
-              <option value="ground">Ground</option>
-              <option value="flying">Flying</option>
-              <option value="psychic">Psychic</option>
-              <option value="bug">Bug</option>
-              <option value="rock">Rock</option>
-              <option value="ghost">Ghost</option>
-              <option value="dragon">Dragon</option>
-              <option value="dark">Dark</option>
-              <option value="steel">Steel</option>
-              <option value="fairy">Fairy</option>
-                
+              <option value="Hisui">Hisui</option>
+            </select><br>
+
+            <label for="type1">Type 1:</label>
+            <select name="type1" id="type1">
+              <option value="Grass">Grass</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Electric">Electric</option>
+              <option value="Ice">Ice</option>
+              <option value="Posion">Posion</option>
+              <option value="Ground">Ground</option>
+              <option value="Flying">Flying</option>
+              <option value="Psychic">Psychic</option>
+              <option value="Bug">Bug</option>
+              <option value="Rock">Rock</option>
+              <option value="Ghost">Ghost</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Dark">Dark</option>
+              <option value="Steel">Steel</option>
+              <option value="Fairy">Fairy</option> 
             </select> <br>
-            Type 2: <select name="type2" id="type2">
-              <option value="notype2">NULL</option>
-              <option value="grass">Grass</option>
-              <option value="fire">Fire</option>
-              <option value="water">Water</option>
-              <option value="electric">Electric</option>
-              <option value="ice">Ice</option>
-              <option value="posion">Posion</option>
-              <option value="ground">Ground</option>
-              <option value="flying">Flying</option>
-              <option value="psychic">Psychic</option>
-              <option value="bug">Bug</option>
-              <option value="rock">Rock</option>
-              <option value="ghost">Ghost</option>
-              <option value="dragon">Dragon</option>
-              <option value="dark">Dark</option>
-              <option value="steel">Steel</option>
-              <option value="fairy">Fairy</option>
-            </select> <br>
-            
-            Status: <select name="status" id="status">
-              <option value="normal">Normal</option>
-              <option value="legendary">Legendary</option>
-              <option value="mythical">Mythical</option>
+
+            <label for="type2">Type 2: </label>
+            <select name="type2" id="type2">
+              <option value="None">None</option>
+              <option value="Grass">Grass</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Electric">Electric</option>
+              <option value="Ice">Ice</option>
+              <option value="Posion">Posion</option>
+              <option value="Ground">Ground</option>
+              <option value="Flying">Flying</option>
+              <option value="Psychic">Psychic</option>
+              <option value="Bug">Bug</option>
+              <option value="Rock">Rock</option>
+              <option value="Ghost">Ghost</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Dark">Dark</option>
+              <option value="Steel">Steel</option>
+              <option value="Fairy">Fairy</option>
             </select> <br>
             
             Trainer Name: <input type="text" id="trainer_name"><br>
             
-            Region: <select name="region" id="region">
-              <option value="kanto">Kanto</option>
-              <option value="johto">Johto</option>
-              <option value="hoenn">Hoenn</option>
-              <option value="sinnon">Sinnoh</option>
-              <option value="unova">Unova</option>
-              <option value="kalos">Kalos</option>
-              <option value="alola">Alola</option>
-              <option value="galar">Galar</option>
-              <option value="paldea">Paldea</option>
->>>>>>> 7680df986ec95e95b24d90a1a984ebdc08b5dc5f
-            </select><br>
-            
-            Held Item (type NULL if there is none): <input type="text" id="heldItem"><br>
+            Held Item (type "None" if there is none): <input type="text" id="heldItem"><br>
             <input type="submit" value="Submit">
         </p>
         </form>
