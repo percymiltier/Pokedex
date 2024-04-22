@@ -6,7 +6,7 @@
     <div class="display:flex; flex-flow:column;">
 <body>
     
-    <h2>Hello, ADMIN</h2>
+    <h2 style="color: white">Hello, ADMIN</h2>
     <input type='button' style='width:52%; height:100%;' value='Add New Pokemon' onclick='deleteRow(\"{$rec['memberID']}\")'/>
 
    <table>
