@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php session_start(); ?>
 
 <html>
     <head>        
@@ -22,29 +20,41 @@
     <a href="/Pokedex/addnew.php">Add new Pokemon</a>
     </p>
    <table style="margin:10px auto 10px auto auto;">
-    <tr>
-        <td>Pokemon</td>
-        <td>Type</td>
-        <td>Status</td>
-        <td>Trainer</td>
-        <td>Region</td>
-        <td>Held Item</td>
-        <td></td>
-      </tr>
+        <thead>
+            <tr>
+                <td>Pokemon</td>
+                <td>Type</td>
+                <td>Status</td>
+                <td>Trainer</td>
+                <td>Region</td>
+                <td>Held Item</td>
+                <td></td>
+            </tr>   
+        </thead>
+       <tbody>
+           <?php
+            $sql = "SELECT * FROM Pokemon";
+            $result = $connection->query($sql);
 
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-            <input type='button' style='width:100%; height:100%;' value='Update' onclick='deleteRow(\"{$rec['memberID']}\")'/>
-            <input type='button' style='width:100%; height:100%;' value='Delete' onclick='deleteRow(\"{$rec['memberID']}\")'/>
+            if (!$result) {
+                die("Invalid query: " . $connection->error);
+            }
+
+            $query= "
+                    SELECT p_id, p_name, status_name, type_name, item_name, trainer_name, region_name
+                    FROM Pokemon AS p
+                    INNER JOIN Status AS s ON s.status_id = p.status_id
+                    INNER JOIN Type AS t ON t.type_id = p.type_id
+                    INNER JOIN Item AS i ON i.item_id = p.item_id
+                    INNER JOIN Trainer AS t ON t.trainer_id = p.trainer_id
+                    INNER JOIN Region AS r ON r.region_id = r.region_id";
+
+            <a class='btn btn-primary btn-sm' href='update'>Update</a>
+            <a href='delete'>Delete</a>
         </td>
-        
-      </tr>
+          </tr>";
+            ?>
+      </tbody>
       
    </table>
 </div>
