@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,21 +13,31 @@
    <table>
     <tr>
         <td>Pokemon</td>
-        <td>Type</td>
+        <td>Type 1</td>
+        <td>Type 2</td>
         <td>Status</td>
         <td>Trainer</td>
         <td>Region</td>
         <td>Held Item</td>
       </tr>
 
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>     
-      </tr>
+    <?php
+        $servername = "localhost";
+        $username = "jmiltier";
+        $password = "cpsc1051";
+        $dbname = "Pokedex";
+
+        $connection = new mysqli($servername, $username, $password, $dbname);
+
+        if ($connection->connect_error) {
+            die("Connection failed.");
+        }
+
+        $sql = "SELECT
+            Pokemon.p_name,
+            Type.type_name,
+            Type.type_name,
+    ?>
       
    </table>
     <a href="/Pokedex/login.php">Back to login</a>
