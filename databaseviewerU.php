@@ -79,15 +79,9 @@
                             <form action=\"/Pokedex/delete.php\" method=\"GET\">
                                 <button name=\"delete\" value=\"$id\" type=\"submit\">Delete</button>
                             </form>
-<<<<<<< HEAD
                             <form action=\"/Pokedex/editPokemon.php\" method=\"GET\">
                                 <button name=\"update\" value=\"$id\" type=\"submit\">Update</button></form>
-=======
-			     <form action=\"/Pokedex/editPokemon.php\" method=\"GET\">
-                                <button name=\"update\" value=\"$id\" type=\"submit\">Update</button>
-                            </form>
 			    
->>>>>>> 92c86d6f2003e95ca3e968f1ac7a3c0be998d177
                         </td>";
                     echo "</tr>";
                 }
