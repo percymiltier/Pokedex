@@ -22,14 +22,14 @@
         <form action="/Pokedex/newpokemon.php" method="GET">
         <p style="text-align: right;">
             Pokemon: <input type="text" name="pokemonName"><br>
-            <label for="status">Choose a status:</label>
+             <label for="status">Choose a status (CURRENT: <php? $region= $_GET['status'<?];:</label>
             <select name="status" id="status">
               <option value="Normal">Normal</option>
               <option value="Legendary">Legendary</option>
               <option value="Mythical">Mythical</option>
             </select><br>
 
-            <label for="region">Choose a region:</label>
+            <label for="region">Choose a region (CURRENT: <php? $region= $_GET['region'<?];:</label>
             <select name="region" id="region">
               <option value="Kanto">Kanto</option>
               <option value="Johto">Johto</option>
@@ -43,7 +43,7 @@
               <option value="Hisui">Hisui</option>
             </select><br>
 
-            <label for="type1">Type 1:</label>
+            <label for="type1">Type 1 CURRENT: <php? $type_1 = $_GET['type1'<?]:</label>
             <select name="type1" id="type1">
               <option value="Grass">Grass</option>
               <option value="Fire">Fire</option>
@@ -63,7 +63,7 @@
               <option value="Fairy">Fairy</option> 
             </select> <br>
 
-            <label for="type2">Type 2: </label>
+            <label for="type2">Type 2 CURRENT: <php? $type_2 = $_GET['type2'<?]:</label>
             <select name="type2" id="type2">
               <option value="None">None</option>
               <option value="Grass">Grass</option>
