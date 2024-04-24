@@ -45,6 +45,7 @@
 
             <label for="type1">Type 1:</label>
             <select name="type1" id="type1">
+              <option value="Normal">Normal</option>
               <option value="Grass">Grass</option>
               <option value="Fire">Fire</option>
               <option value="Water">Water</option>

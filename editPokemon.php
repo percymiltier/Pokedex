@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1000px, initial-scale=1.0">
-    <title>Add new Pokemon</title>
+    <title>Edit Pokemon</title>
     <link href="/Pokedex/stylesheet.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
@@ -11,7 +11,8 @@
     <!-- main -->
     <div class="main">
         <h1 style="text-align:center; color:#3E51A5;">Update an existing record:</h1>
-        <?php 
+        <?php
+            header("Location:/Pokedex/editpokemon.php"); 
             if (isset($_SESSION['error'])) {
                 echo "<div class=\"alert\">";
                 echo $_SESSION['error'];
@@ -19,9 +20,51 @@
                 unset($_SESSION['error']);
             }
         ?>
-        <form action="/Pokedex/newpokemon.php" method="GET">
+
+        <?php 
+            $servername = "localhost";
+            $username = "jmiltier";
+            $password = "cpsc1051";
+            $dbname = "Pokedex";
+            $connection = new mysqli($servername, $username, $password, $dbname);
+
+            $id = $_GET['id'];
+            $query = "SELECT
+	Pokemon.p_id,
+	Pokemon.p_name,
+	Type.type_name,
+	t2.type_name AS type2_name,
+	Status.status_name,
+	Trainer.trainer_name,
+	Region.region_name,
+	Held_Item.item_name
+	
+	FROM Pokemon
+	
+	JOIN Type ON Type.type_id = Pokemon.type_id
+	JOIN Type t2 ON t2.type_id = Pokemon.type2_id
+	JOIN Status ON Status.status_id = Pokemon.status_id
+	JOIN Trainer ON Trainer.trainer_id = Pokemon.trainer_id
+	JOIN Region ON Region.region_id = Pokemon.region_id
+	JOIN Held_Item ON Held_Item.item_id = Pokemon.item_id
+
+    WHERE Pokemon.p_id=" . $id . ";";
+    
+        $result = mysqli_query($connection, $query);
+        $row = mysqli_fetch_array($result);
+
+        $name = $row['p_name'];
+        $type1 = $row['type_name'];
+        $ype2 = $row['type2_name'];
+        $status = $row['status_name'];
+        $trainer = $row['trainer_name'];
+        $region = $row['region_name'];
+        $item = $row['item_name'];
+
+        ?>
+        <form action="/Pokedex/update.php" method="GET">
         <p style="text-align: right;">
-            Pokemon: <input type="text" name="pokemonName"><br>
+            Pokemon: (Current: <?php echo $name; ?>) <input type="text" name="pokemonName"><br>
             <label for="status">Choose a status:</label>
             <select name="status" id="status">
               <option value="Normal">Normal</option>
@@ -45,6 +88,7 @@
 
             <label for="type1">Type 1:</label>
             <select name="type1" id="type1">
+              <option value="Normal">Normal</option>
               <option value="Grass">Grass</option>
               <option value="Fire">Fire</option>
               <option value="Water">Water</option>
