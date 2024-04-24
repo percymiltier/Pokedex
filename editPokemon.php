@@ -12,7 +12,7 @@
     <div class="main">
         <h1 style="text-align:center; color:#3E51A5;">Update an existing record:</h1>
         <?php
-            header("Location:/Pokedex/editpokemon.php"); 
+            header("Location:/Pokedex/editPokemon.php"); 
             if (isset($_SESSION['error'])) {
                 echo "<div class=\"alert\">";
                 echo $_SESSION['error'];
@@ -55,7 +55,7 @@
 
         $name = $row['p_name'];
         $type1 = $row['type_name'];
-        $ype2 = $row['type2_name'];
+        $type2 = $row['type2_name'];
         $status = $row['status_name'];
         $trainer = $row['trainer_name'];
         $region = $row['region_name'];
@@ -64,20 +64,17 @@
         ?>
         <form action="/Pokedex/update.php" method="GET">
         <p style="text-align: right;">
-<<<<<<< HEAD
-            Pokemon: (Current: <?php echo $name; ?>) <input type="text" name="pokemonName"><br>
+            Pokemon: (CURRENT: <?php echo $name; ?>) <input type="text" name="pokemonName"><br>
             <label for="status">Choose a status:</label>
-=======
             Pokemon: <input type="text" name="pokemonName"><br>
-             <label for="status">Choose a status (CURRENT: <php? $region= $_GET['status'<?];:</label>
->>>>>>> c57115a2e7fa6ceb70c4e7ddb41898def3da956b
+             <label for="status">Choose a status (CURRENT: <?php echo $status; ?> )</label>
             <select name="status" id="status">
               <option value="Normal">Normal</option>
               <option value="Legendary">Legendary</option>
               <option value="Mythical">Mythical</option>
             </select><br>
 
-            <label for="region">Choose a region (CURRENT: <php? $region= $_GET['region'<?];:</label>
+            <label for="region">Choose a region (CURRENT: <?php echo $region; ?> )</label>
             <select name="region" id="region">
               <option value="Kanto">Kanto</option>
               <option value="Johto">Johto</option>
@@ -91,7 +88,7 @@
               <option value="Hisui">Hisui</option>
             </select><br>
 
-            <label for="type1">Type 1 CURRENT: <php? $type_1 = $_GET['type1'<?]:</label>
+            <label for="type1">Type 1 (CURRENT: <?php echo $type1; ?>)</label>
             <select name="type1" id="type1">
               <option value="Normal">Normal</option>
               <option value="Grass">Grass</option>
@@ -112,7 +109,7 @@
               <option value="Fairy">Fairy</option> 
             </select> <br>
 
-            <label for="type2">Type 2 CURRENT: <php? $type_2 = $_GET['type2'<?]:</label>
+            <label for="type2">Type 2 (CURRENT: <?php echo $type2; ?>)</label>
             <select name="type2" id="type2">
               <option value="None">None</option>
               <option value="Grass">Grass</option>
@@ -133,9 +130,9 @@
               <option value="Fairy">Fairy</option>
             </select> <br>
             
-            Trainer Name: <input type="text" name="pokemonTrainer"><br>
+            Trainer Name: (CURRENT: <?php echo $trainer; ?>)<input type="text" name="pokemonTrainer"><br>
             
-            Held Item (type "None" if there is none): <input type="text" name="heldItem"><br>
+            Held Item (type "None" if there is none) (CURRENT: <?php echo $item; ?>: <input type="text" name="heldItem"><br>
             <input type="submit" value="Submit">
         </p>
         </form>
