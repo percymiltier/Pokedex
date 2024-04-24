@@ -13,7 +13,6 @@
                   }
 
     $id = $_GET['id'];
-
     $p_name = $_GET['pokemonName'];
     $type1 = $_GET['type1'];
     $type2 = $_GET['type2'];
@@ -22,7 +21,28 @@
     $region = $_GET['region'];
     $item = $_GET['heldItem'];
 
-    $sql = "INSERT INTO Pokemon (
+$delete = "DELETE FROM Pokemon WHERE p_id=" . $id . ";";
+mysqli_query($connection, $delete);
+
+if ($p_name=="") {
+    $_SESSION['error'] = "<p>Please enter a Pokemon.</p>";
+    header("Location:/Pokedex/editPokemon.php");
+    exit();
+} else if ($trainer=="") {
+    $_SESSION['error'] = "<p>Please enter a trainer.</p>";
+    header("Location:/Pokedex/editPokemon.php");
+    exit();
+}
+
+$sql_check_t = "SELECT trainer_id FROM Trainer WHERE trainer_name='$trai    ner'";
+$sql_check_i = "SELECT item_id FROM Held_Item WHERE item_name='$item'";
+
+    $result_check_t = mysqli_query($connection, $sql_check_t);
+     $result_check_i = mysqli_query($connection, $sql_check_i);
+
+     $sql_t = "INSERT INTO Trainer (trainer_name) VALUES ('$trainer');";
+     $sql_i = "INSERT INTO Held_Item (item_name) VALUES ('$item');";
+    $sql_p = "INSERT INTO Pokemon (
         p_name, 
         type_id, 
         type2_id, 
@@ -39,6 +59,21 @@
         (SELECT trainer_id FROM Trainer WHERE trainer_name='$trainer'),
         (SELECT region_id FROM Region WHERE region_name='$region')
     );";
+
+    $row_t = mysqli_num_rows($result_check_t);
+    $row_i = mysqli_num_rows($result_check_i);
+
+    if ($row_t!=0) {
+        $insertYAY_t = true;
+    } else {
+        $insertYAY_t = mysqli_query($connection, $sql_t);
+    }
+
+    if ($row_i!=0) {
+        $insertYAY_i = true;
+    } else {
+        $insertYAY_i = mysqli_query($connection, $sql_i);
+    }    
 
     $insertYAY_p = mysqli_query($connection, $sql_p);
 

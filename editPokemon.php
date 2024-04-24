@@ -11,8 +11,7 @@
     <!-- main -->
     <div class="main">
         <h1 style="text-align:center; color:#3E51A5;">Update an existing record:</h1>
-        <?php
-            header("Location:/Pokedex/editPokemon.php"); 
+        <?php 
             if (isset($_SESSION['error'])) {
                 echo "<div class=\"alert\">";
                 echo $_SESSION['error'];
@@ -28,7 +27,7 @@
             $dbname = "Pokedex";
             $connection = new mysqli($servername, $username, $password, $dbname);
 
-            $id = $_GET['id'];
+            $id = $_GET['update'];
             $query = "SELECT
 	Pokemon.p_id,
 	Pokemon.p_name,
@@ -65,8 +64,6 @@
         <form action="/Pokedex/update.php" method="GET">
         <p style="text-align: right;">
             Pokemon: (CURRENT: <?php echo $name; ?>) <input type="text" name="pokemonName"><br>
-            <label for="status">Choose a status:</label>
-            Pokemon: <input type="text" name="pokemonName"><br>
              <label for="status">Choose a status (CURRENT: <?php echo $status; ?> )</label>
             <select name="status" id="status">
               <option value="Normal">Normal</option>
@@ -134,8 +131,10 @@
             
             Trainer Name: (CURRENT: <?php echo $trainer; ?>)<input type="text" name="pokemonTrainer"><br>
             
-            Held Item (type "None" if there is none) (CURRENT: <?php echo $item; ?>: <input type="text" name="heldItem"><br>
-            <input type="submit" value="Submit">
+            Held Item (type "None" if there is none) (CURRENT: <?php echo $item; ?>) <input type="text" name="heldItem"><br>
+            
+            <button type="submit" value="<?php echo $id; ?>" name="id">
+            Submit</button>
         </p>
         </form>
     </div>
