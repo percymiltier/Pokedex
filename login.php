@@ -15,7 +15,7 @@
     <div class="main">
         <div style="display:flex; flex-flow:column;">
             <!-- button to use as a guest -->
-            <a href="/Pokedex/viewdatabaseG.php" style="text-align:center;">View as Guest</a>
+            <a href="/Pokedex/databaseviewerG.php" style="text-align:center;">View as Guest</a>
 
             <h1 style="color:#3E51A5; text-align:center;">OR</h1>
     

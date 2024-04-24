@@ -10,11 +10,13 @@
     <div class="display:flex; flex-flow:column;">
 <body>
 <div class="mainTable">
-    <h2 style="color: white">Hello, <?php 
+    <h1 style="color:#3E51A5; margin-bottom:-10px;">
+        <img src="https://pokedex196.carrd.co/assets/images/image02.gif?v=78053d82" style="height:60px; margin:0;">
+        Hello, <?php 
         if (isset($_SESSION["username"])) {
         echo $_SESSION["username"];
         }
-    ?></h2>
+    ?></h1>
     <p>
     
     <a href="/Pokedex/addnew.php">Add new Pokemon</a>
@@ -64,8 +66,10 @@
                 while($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
                     echo "<td>" . $row['p_name'] . "</td>";
-                    echo "<td>" . $row['type_name'] . " / ";
-                    echo $row['type2'] . "</td>";
+                    echo "<td>" . $row['type_name'];
+                    if ($row['type2']!='None') {
+                        echo " / " . $row['type2'] . "</td>";
+                    } else { echo "</td>"; }
                     echo "<td>" . $row['status_name'] . "</td>";
                     echo "<td>" . $row['trainer_name'] . "</td>";
                     echo "<td>" . $row['region_name'] . "</td>";
@@ -75,6 +79,8 @@
                             <form action=\"/Pokedex/delete.php\" method=\"GET\">
                                 <button name=\"delete\" value=\"$id\" type=\"submit\">Delete</button>
                             </form>
+                            <form action=\"\" method=\"GET\">
+                                <button name=\"update\" value=\"$id\" type\"submit\">Update</button>
                         </td>";
                     echo "</tr>";
                 }

@@ -16,7 +16,7 @@ body {
     display: inline-flex;
     flex-flow: column;
     justify-content: center;
-    width: min-content;
+    width: 800px;
     background: black;
     border-radius: 10px;
     margin: 10px;
