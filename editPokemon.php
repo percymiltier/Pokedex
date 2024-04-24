@@ -105,6 +105,7 @@
               <option value="Ghost">Ghost</option>
               <option value="Dragon">Dragon</option>
               <option value="Dark">Dark</option>
+              <option value="Dark">Normal</option>     
               <option value="Steel">Steel</option>
               <option value="Fairy">Fairy</option> 
             </select> <br>
@@ -126,6 +127,7 @@
               <option value="Ghost">Ghost</option>
               <option value="Dragon">Dragon</option>
               <option value="Dark">Dark</option>
+              <option value="Dark">Normal</option>     
               <option value="Steel">Steel</option>
               <option value="Fairy">Fairy</option>
             </select> <br>
