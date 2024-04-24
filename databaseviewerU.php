@@ -19,15 +19,15 @@
     
     <a href="/Pokedex/addnew.php">Add new Pokemon</a>
     </p>
-   <table style="margin:10px auto 10px auto auto;">
+   <table style="margin:10px auto 10px auto auto; border:none;">
         <thead>
             <tr>
-                <td>Pokemon</td>
-                <td>Type</td>
-                <td>Status</td>
-                <td>Trainer</td>
-                <td>Region</td>
-                <td>Held Item</td>
+                <th>Pokemon</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Trainer</th>
+                <th>Region</th>
+                <th>Held Item</th>
             </tr>   
         </thead>
        <tbody>
@@ -37,12 +37,6 @@
             $password = "cpsc1051";
             $dbname = "Pokedex";
             $connection = new mysqli($servername, $username, $password, $dbname);
-            $sql = "SELECT * FROM Pokemon";
-            $result = $connection->query($sql);
-
-            if (!$result) {
-                die("Invalid query: " . $connection->error);
-            }
 
             $query= "
                     SELECT
@@ -50,7 +44,6 @@
 	                Pokemon.p_name,
 	                Type.type_name,
 	                t2.type_name AS type2,
-
 	                Status.status_name,
 	                Trainer.trainer_name,
 	                Region.region_name,
@@ -66,8 +59,9 @@
                 	JOIN Held_Item ON Held_Item.item_id = Pokemon.item_id;
                     ";
 
-            if ($result->num_rows>0) {
-                while($row = $result->fetch_assoc()) {
+                $result = mysqli_query($connection, $query);
+            
+                while($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
                     echo "<td>" . $row['p_name'] . "</td>";
                     echo "<td>" . $row['type_name'] . " / ";
@@ -84,11 +78,12 @@
                         </td>";
                     echo "</tr>";
                 }
-            }
+            
             ?>
           </tr>
       </tbody>
    </table>
+    <a href="login.php">Logout</a>
 </div>
 </div>
 </body>

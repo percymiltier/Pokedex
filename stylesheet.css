@@ -53,30 +53,32 @@ a {
 
 table {
   border-collapse: collapse;
-  border: 2px solid rgb(200,200,200);
+  border: none;
   letter-spacing: 1px;
   font-size: 0.8rem;
 }
 
 td, th {
-  border: 1px solid rgb(190,190,190);
+  border: 1px solid #190D19;
   padding: 10px 20px;
 }
 
 th {
-  background-color: rgb(235,235,235);
+  background-color: #9862CB;
+  color: #E1CFD6;
 }
 
 td {
-  text-align: center;
+    color: #E1CFD6;
+    text-align: center;
 }
 
 tr:nth-child(even) td {
-  background-color: rgb(250,250,250);
+  background-color: #6D5484;
 }
 
 tr:nth-child(odd) td {
-  background-color: rgb(245,245,245);
+  background-color: #553F69;
 }
 
 caption {
